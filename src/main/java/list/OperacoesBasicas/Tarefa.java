@@ -1,19 +1,19 @@
 package main.java.list.OperacoesBasicas;
 
 public class Tarefa {
-  //atributo
-  private String descricao;
 
-  public Tarefa(String descricao) {
-    this.descricao = descricao;
-  }
+    private String tarefa;
 
-  public String getDescricao() {
-    return descricao;
-  }
+    public Tarefa(String tarefa) {
+        this.tarefa = tarefa;
+    }
 
-  @Override
-  public String toString() {
-    return  descricao;
-  }
+    public String getDescicao() {
+        return tarefa;
+    }
+
+    @Override
+    public String toString() {
+        return tarefa;
+    }
 }
