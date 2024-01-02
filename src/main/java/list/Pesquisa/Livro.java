@@ -1,39 +1,48 @@
 package main.java.list.Pesquisa;
 
 public class Livro {
-  //atributos
-  private String titulo;
-  private String autor;
-  private int anoPublicacao;
+    private String titulo;
 
-  public Livro(String titulo, String autor, int anoPublicacao) {
-    this.titulo = titulo;
-    this.autor = autor;
-    this.anoPublicacao = anoPublicacao;
-  }
+    private String autor;
 
-  public String getTitulo() {
-    return titulo;
-  }
+    private int anoPublicacao;
 
-  public void setAutor(String autor) {
-    this.autor = autor;
-  }
+    public Livro(String livro, String autor, int anoPublicacao) {
+        this.titulo = livro;
+        this.autor = autor;
+        this.anoPublicacao = anoPublicacao;
+    }
 
-  public String getAutor() {
-    return autor;
-  }
+    public String getTitulo() {
+        return titulo;
+    }
 
-  public int getAnoPublicacao() {
-    return anoPublicacao;
-  }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
-  @Override
-  public String toString() {
-    return "Livro{" +
-        "titulo='" + titulo + '\'' +
-        ", autor='" + autor + '\'' +
-        ", anoPublicacao=" + anoPublicacao +
-        '}';
-  }
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+
+    public int getAnoPublicacao() {
+        return anoPublicacao;
+    }
+
+    public void setAnoPublicacao(int anoPublicacao) {
+        this.anoPublicacao = anoPublicacao;
+    }
+
+    @Override
+    public String toString() {
+        return "Livro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", anoPublicacao=" + anoPublicacao +
+                '}';
+    }
 }
