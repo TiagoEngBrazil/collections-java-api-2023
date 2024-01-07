@@ -3,41 +3,40 @@ package main.java.set.Pesquisa;
 import java.util.Objects;
 
 public class Contato {
-  //atributos
-  private String nome;
-  private int numero;
+    private String name;
+    private int numero;
 
-  public Contato(String nome, int numero) {
-    this.nome = nome;
-    this.numero = numero;
-  }
+    public Contato(String name, int numero) {
+        this.name = name;
+        this.numero = numero;
+    }
 
-  public String getNome() {
-    return nome;
-  }
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
 
-  public int getNumero() {
-    return numero;
-  }
+    public String getName() {
+        return name;
+    }
 
-  public void setNumero(int numero) {
-    this.numero = numero;
-  }
+    public int getNumero() {
+        return numero;
+    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (!(o instanceof Contato contato)) return false;
-    return Objects.equals(getNome(), contato.getNome());
-  }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Contato that)) return false;
+        return getName().equals(that.getName());
+    }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(getNome());
-  }
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName());
+    }
 
-  @Override
-  public String toString() {
-    return "{" + nome + "," + numero + "}";
-  }
+    @Override
+    public String toString() {
+        return  name + "-" + numero;
+    }
 }
