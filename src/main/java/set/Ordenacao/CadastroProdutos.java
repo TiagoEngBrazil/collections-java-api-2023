@@ -5,53 +5,45 @@ import java.util.Set;
 import java.util.TreeSet;
 
 public class CadastroProdutos {
-  //atributo
-  private Set<Produto> produtoSet;
+    // atributo
 
-  public CadastroProdutos() {
-    this.produtoSet = new HashSet<>();
-  }
+    private Set<Produto> produtoSet;
 
-  public void adicionarProduto(long cod, String nome, double preco, int quantidade) {
-    produtoSet.add(new Produto(cod, nome, preco, quantidade));
-  }
-
-  public Set<Produto> exibirProdutosPorNome() {
-    Set<Produto> produtosPorNome = new TreeSet<>(produtoSet);
-    if (!produtoSet.isEmpty()) {
-      return produtosPorNome;
-    } else {
-      throw new RuntimeException("O conjunto está vazio!");
+    public CadastroProdutos() {
+        this.produtoSet = new HashSet<>();
     }
-  }
 
-  public Set<Produto> exibirProdutosPorPreco() {
-    Set<Produto> produtosPorPreco = new TreeSet<>(new ComparatorPorPreco());
-    if (!produtoSet.isEmpty()) {
-      produtosPorPreco.addAll(produtoSet);
-      return produtosPorPreco;
-    } else {
-      throw new RuntimeException("O conjunto está vazio!");
+    public void adicionarProduto(String produto, long cod, double preco, int quantidade) {
+        produtoSet.add(new Produto(produto, cod, preco, quantidade));
     }
-  }
 
-  public static void main(String[] args) {
-    // Criando uma instância do CadastroProdutos
-    CadastroProdutos cadastroProdutos = new CadastroProdutos();
+    public Set<Produto> exibirProdutosPorNome() {
+        Set<Produto> produtosPorNome = new TreeSet<>(produtoSet);
+        return produtosPorNome;
+    }
 
-    // Adicionando produtos ao cadastro
-    cadastroProdutos.adicionarProduto(1L, "Smartphone", 1000d, 10);
-    cadastroProdutos.adicionarProduto(2L, "Notebook", 1500d, 5);
-    cadastroProdutos.adicionarProduto(1L, "Mouse", 30d, 20);
-    cadastroProdutos.adicionarProduto(4L, "Teclado", 50d, 15);
+    public Set<Produto> exibirProdutosPorPreco() {
+        Set<Produto> produtosPorPreco = new TreeSet<>(new ComparatorPorPreco());
+        produtosPorPreco.addAll(produtoSet);
+        return produtosPorPreco;
+    }
 
-    // Exibindo todos os produtos no cadastro
-    System.out.println(cadastroProdutos.produtoSet);
+    public static void main(String[] args) {
+        CadastroProdutos cadastroProdutos = new CadastroProdutos();
 
-    // Exibindo produtos ordenados por nome
-    System.out.println(cadastroProdutos.exibirProdutosPorNome());
+//        System.out.println(cadastroProdutos.produtoSet);
 
-    // Exibindo produtos ordenados por preço
-    System.out.println(cadastroProdutos.exibirProdutosPorPreco());
-  }
+        cadastroProdutos.adicionarProduto("p1", 344556L, 4.55, 8);
+        cadastroProdutos.adicionarProduto("p2", 344666L, 4.00, 8);
+        cadastroProdutos.adicionarProduto("p3", 340056L, 5.55, 8);
+        cadastroProdutos.adicionarProduto("p4", 340056L, 6.55, 8);
+
+//        System.out.println(cadastroProdutos.produtoSet);
+
+//        System.out.println(cadastroProdutos.exibirProdutosPorNome());
+
+        System.out.println(cadastroProdutos.exibirProdutosPorPreco());
+
+    }
 }
+
